@@ -1,18 +1,16 @@
 import { getCurrentDateTime } from "./utils.js";
 
 export const renderWidgetToday = (widget) => {
+  const {dayOfMonth, month, year,  hours, minutes, dayOfWeek} = getCurrentDateTime();
 
-
-    const currentDateTime= getCurrentDateTime();
-
-    widget.insertAdjacentHTML(
-        'beforeend',
-        `
+  widget.insertAdjacentHTML(
+    "beforeend",
+    `
         <div class="widget__today">
             <div class="widget__date-block">
-            <p class="widget__date">20 июн 2023</p>
-            <p class="widget__time">${currentDateTime.hours}:${currentDateTime.minutes}</p>
-            <p class="widget__day">${currentDateTime.dayOfWeek}</p>
+            <p class="widget__date">${dayOfMonth} ${month} ${year}</p>
+            <p class="widget__time">${hours}:${minutes}</p>
+            <p class="widget__day">${dayOfWeek}</p>
             </div>
         <div class="widget__icon">
             <img class="widget__img" src="./icon/01d.svg" alt="Погода">
@@ -28,11 +26,11 @@ export const renderWidgetToday = (widget) => {
             </div>
         </div>
         `
-    )
-}
+  );
+};
 
 export const renderWidgetOther = (widget) => {
-    widget.insertAdjacentHTML(
+  widget.insertAdjacentHTML(
     "beforeend",
     `
     <div class="widget__other">
@@ -53,13 +51,13 @@ export const renderWidgetOther = (widget) => {
     </div>
     </div>
     `
-    );
-}
+  );
+};
 
 export const renderWidgetForecast = (widget) => {
-    widget.insertAdjacentHTML(
-        'beforeend',
-        `
+  widget.insertAdjacentHTML(
+    "beforeend",
+    `
         <ul class="widget__forecast">
             <li class="widget__day-item">
                 <p class="widget__day-text">ср</p>
@@ -88,5 +86,5 @@ export const renderWidgetForecast = (widget) => {
             </li>
         </ul>
         `
-    )
-}
+  );
+};

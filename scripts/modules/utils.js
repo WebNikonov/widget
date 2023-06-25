@@ -1,3 +1,6 @@
+
+const addZero = (n) => n<10 ? `0${n}` : n;
+
 export const getCurrentDateTime = () => {
     const months = [
         'янв',
@@ -35,18 +38,11 @@ export const getCurrentDateTime = () => {
     const weeeeeekday = date.getDay();
     console.log('weeeeeekday: ', weeeeeekday);
 
-    let hours = date.getHours();
-    let minutes = date.getMinutes();
+    let hours = addZero(date.getHours());
+    let minutes = addZero(date.getMinutes());
 
-    if (hours < 10) {
-        hours = `0${hours}`;
-    }
-
-    if (minutes < 10) {
-        hours = `0${minutes}`;
-    }
-
-    console.log(dayOfWeek)
+    console.log(hours)
+    console.log(minutes)
 
     return {dayOfMonth, month, year,  hours, minutes, dayOfWeek};
 };
