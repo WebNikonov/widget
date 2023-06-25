@@ -34,15 +34,12 @@ export const getCurrentDateTime = () => {
     const month = months[date.getMonth()];
     const year = date.getFullYear();
     const dayOfWeek = weekdays[date.getDay()];
-    
-    const weeeeeekday = date.getDay();
-    console.log('weeeeeekday: ', weeeeeekday);
 
     let hours = addZero(date.getHours());
     let minutes = addZero(date.getMinutes());
 
-    console.log(hours)
-    console.log(minutes)
+    console.log(hours, ":" , minutes);
+  
 
     return {dayOfMonth, month, year,  hours, minutes, dayOfWeek};
 };

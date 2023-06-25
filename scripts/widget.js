@@ -1,10 +1,14 @@
+import { fetchWeather } from './modules/APIservice.js';
 import { startWidget } from './modules/widgetService.js';
 
-const initWidget = (app) => {
+const initWidget = async (app) => {
 
-    const widget = startWidget();
+    const widget = await startWidget();
+
     app.append(widget);
 
+
+    
     
 }
 
